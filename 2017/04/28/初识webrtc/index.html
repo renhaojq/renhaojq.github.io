@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/28/初识webrtc/index.html">
 <meta property="og:site_name" content="Tyson">
 <meta property="og:description" content="WebRTC是一个开源项目，旨在使得浏览器能为实时通信（RTC）提供简单的JavaScript接口。说的简单明了一点就是让浏览器提供JS的即时通信接口。这个接口所创立的信道并不是像WebSocket一样，打通一个浏览器与WebSocket服务器之间的通信，而是通过一系列的信令，建立一个浏览器与浏览器之间（peer-to-peer）的信道，这个信道可以发送任何数据，而不需要经过服务器。并且WebRT">
-<meta property="og:updated_time" content="2017-04-28T10:20:46.969Z">
+<meta property="og:updated_time" content="2017-04-28T13:58:29.291Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识webrtc">
 <meta name="twitter:description" content="WebRTC是一个开源项目，旨在使得浏览器能为实时通信（RTC）提供简单的JavaScript接口。说的简单明了一点就是让浏览器提供JS的即时通信接口。这个接口所创立的信道并不是像WebSocket一样，打通一个浏览器与WebSocket服务器之间的通信，而是通过一系列的信令，建立一个浏览器与浏览器之间（peer-to-peer）的信道，这个信道可以发送任何数据，而不需要经过服务器。并且WebRT">
@@ -325,23 +325,65 @@
 
       
         <p>WebRTC是一个开源项目，旨在使得浏览器能为实时通信（RTC）提供简单的JavaScript接口。说的简单明了一点就是让浏览器提供JS的即时通信接口。这个接口所创立的信道并不是像WebSocket一样，打通一个浏览器与WebSocket服务器之间的通信，而是通过一系列的信令，建立一个浏览器与浏览器之间（peer-to-peer）的信道，这个信道可以发送任何数据，而不需要经过服务器。并且WebRTC通过实现MediaStream，通过浏览器调用设备的摄像头、话筒，使得浏览器之间可以传递音频和视频。</p>
-<h3 id="三个接口"><a href="#三个接口" class="headerlink" title="三个接口"></a>三个接口</h3><h6 id="WebRTC实现了三个API，分别是"><a href="#WebRTC实现了三个API，分别是" class="headerlink" title="WebRTC实现了三个API，分别是:"></a>WebRTC实现了三个API，分别是:</h6><ul>
-<li>MediaStream：通过MediaStream的API能够通过设备的摄像头及话筒获得视频、音频的同步流</li>
-</ul>
 <a id="more"></a>
-<ul>
-<li>RTCPeerConnection：RTCPeerConnection是WebRTC用于构建点对点之间稳定、高效的流传输的组件</li>
-<li>RTCDataChannel：RTCDataChannel使得浏览器之间（点对点）建立一个高吞吐量、低延时的信道，用于传输任意数据 </li>
+<h3 id="三个接口"><a href="#三个接口" class="headerlink" title="三个接口"></a>三个接口</h3><h6 id="WebRTC实现了三个API，分别是"><a href="#WebRTC实现了三个API，分别是" class="headerlink" title="WebRTC实现了三个API，分别是:"></a>WebRTC实现了三个API，分别是:</h6><ul>
+<li><span style="color:#0a810a">MediaStream</span>：通过MediaStream的API能够通过设备的摄像头及话筒获得视频、音频的同步流</li>
+<li><span style="color:#0a810a">RTCPeerConnection</span>：RTCPeerConnection是WebRTC用于构建点对点之间稳定、高效的流传输的组件</li>
+<li><span style="color:#0a810a">RTCDataChannel</span>：RTCDataChannel使得浏览器之间（点对点）建立一个高吞吐量、低延时的信道，用于传输任意数据 </li>
 </ul>
-<p>简单介绍下三个API</p>
-<h3 id="MediaStream（getUserMedia）"><a href="#MediaStream（getUserMedia）" class="headerlink" title="MediaStream（getUserMedia）"></a>MediaStream（getUserMedia）</h3><p>MediaStream API为WebRTC提供了从设备的摄像头、话筒获取视频、音频流数据的功能<br>调用方法：可以通过调用navigator.getUserMedia()，这个方法接受三个参数</p>
+<blockquote>
+<h5 id="简单介绍下三个API"><a href="#简单介绍下三个API" class="headerlink" title="简单介绍下三个API"></a>简单介绍下三个API</h5></blockquote>
+<h2 id="一、MediaStream（getUserMedia）"><a href="#一、MediaStream（getUserMedia）" class="headerlink" title="一、MediaStream（getUserMedia）"></a>一、MediaStream（getUserMedia）</h2><p>MediaStream API为WebRTC提供了从设备的摄像头、话筒获取视频、音频流数据的功能<br>调用方法：可以通过调用navigator.getUserMedia()，这个方法接受三个参数</p>
 <ol>
 <li>一个约束对象（constraints object）</li>
 <li>一个调用成功的回调函数，如果调用成功，传递给它一个流对象</li>
-<li>一个调用失败的回调函数，如果调用失败，传递给它一个错误对象<h6 id="浏览器兼容性（此处就用chrome浏览器示例）"><a href="#浏览器兼容性（此处就用chrome浏览器示例）" class="headerlink" title="浏览器兼容性（此处就用chrome浏览器示例）"></a>浏览器兼容性（此处就用chrome浏览器示例）</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!doctype html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>GetUserMedia实例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">video</span> <span class="attr">id</span>=<span class="string">"video"</span> <span class="attr">autoplay</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
+<li>一个调用失败的回调函数，如果调用失败，传递给它一个错误对象</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">navigator.webkitGetUserMedia(&#123;</div><div class="line">	<span class="string">"audio"</span>:<span class="literal">true</span>,</div><div class="line">	<span class="string">"video"</span>:<span class="literal">true</span></div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">stream</span>)</span>&#123;</div><div class="line">	<span class="built_in">document</span>.getElementById(<span class="string">'video'</span>).src = URL.createObjectURL(stream);</div><div class="line">	pc.addStream(stream);</div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">erro</span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"media erro:"</span>+ erro);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h6 id="浏览器兼容性（此处就用chrome浏览器示例）"><a href="#浏览器兼容性（此处就用chrome浏览器示例）" class="headerlink" title="浏览器兼容性（此处就用chrome浏览器示例）"></a>浏览器兼容性（此处就用chrome浏览器示例）</h6><p>html部分<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!doctype html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>GetUserMedia实例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">video</span> <span class="attr">id</span>=<span class="string">"video"</span> <span class="attr">autoplay</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>js部分<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">navigator.webkitGetUserMedia(&#123;</div><div class="line">	<span class="string">"audio"</span>:<span class="literal">true</span>,</div><div class="line">	<span class="string">"video"</span>:<span class="literal">true</span></div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">stream</span>)</span>&#123;</div><div class="line">	<span class="built_in">document</span>.getElementById(<span class="string">'video'</span>).src = URL.createObjectURL(stream);</div><div class="line">	pc.addStream(stream);   <span class="comment">//此处 pc 代表PeerConnection实例</span></div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">erro</span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"media erro:"</span>+ erro);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h2 id="二、RTCPeerConnection"><a href="#二、RTCPeerConnection" class="headerlink" title="二、RTCPeerConnection"></a>二、RTCPeerConnection</h2><p>WebRTC使用RTCPeerConnection来在浏览器之间传递流数据，这个流数据通道是点对点的，不需要经过服务器进行中转。但是这并不意味着我们能抛弃服务器，我们仍然需要它来为我们传递信令（signaling）来建立这个信道。WebRTC没有定义用于建立信道的信令的协议：信令并不是RTCPeerConnection API的一部分</p>
+<h5 id="信令"><a href="#信令" class="headerlink" title="信令"></a>信令</h5><p>既然没有定义具体的信令的协议，我们就可以选择任意方式（AJAX、WebSocket），采用任意的协议（SIP、XMPP）来传递信令，建立信道,下面有个例子就是通过nodejs中ws模块，通过websocket实现的</p>
+<p>需要信令来交换的信息有三种：</p>
+<ul>
+<li>session的信息：用来初始化通信还有报错</li>
+<li>网络配置：比如IP地址和端口啥的</li>
+<li>媒体适配：发送方和接收方的浏览器能够接受什么样的编码器和分辨率</li>
+</ul>
+<h4 id="通过服务器建立信道"><a href="#通过服务器建立信道" class="headerlink" title="通过服务器建立信道"></a>通过服务器建立信道</h4><p>这里再次重申，就算WebRTC提供浏览器之间的点对点信道进行数据传输，但是建立这个信道，必须有服务器的参与。WebRTC需要服务器对其进行四方面的功能支持：</p>
+<ol>
+<li>用户发现以及通信</li>
+<li>信令传输</li>
+<li>NAT/防火墙穿越</li>
+<li>如果点对点通信建立失败，可以作为中转服务器</li>
+</ol>
+<h4 id="NAT-防火墙穿越技术"><a href="#NAT-防火墙穿越技术" class="headerlink" title="NAT/防火墙穿越技术"></a>NAT/防火墙穿越技术</h4><p>建立点对点信道的一个常见问题，就是NAT穿越技术。在处于使用了NAT设备的私有TCP/IP网络中的主机之间需要建立连接时需要使用NAT穿越技术。以往在VoIP领域经常会遇到这个问题。目前已经有很多NAT穿越技术，但没有一项是完美的，因为NAT的行为是非标准化的。这些技术中大多使用了一个公共服务器，这个服务使用了一个从全球任何地方都能访问得到的IP地址。在RTCPeeConnection中，使用ICE框架来保证RTCPeerConnection能实现NAT穿越</p>
+<p>ICE，全名叫交互式连接建立（Interactive Connectivity Establishment）,一种综合性的NAT穿越技术，它是一种框架，可以整合各种NAT穿越技术如STUN、TURN（Traversal Using Relay NAT 中继NAT实现的穿透）。ICE会先使用STUN，尝试建立一个基于UDP的连接，如果失败了，就会去TCP（先尝试HTTP，然后尝试HTTPS），如果依旧失败ICE就会使用一个中继的TURN服务器。</p>
+<h2 id="三、RTCDataChannel"><a href="#三、RTCDataChannel" class="headerlink" title="三、RTCDataChannel"></a>三、RTCDataChannel</h2><p>既然能建立点对点的信道来传递实时的视频、音频数据流，为什么不能用这个信道传一点其他数据呢？RTCDataChannel API就是用来干这个的，基于它我们可以在浏览器之间传输任意数据。DataChannel是建立在PeerConnection上的，不能单独使用<br>使用DataChannel</p>
+<p>我们可以使用channel = pc.createDataCHannel(“someLabel”);来在PeerConnection的实例上创建Data Channel，并给与它一个标签</p>
+<p>DataChannel使用方式几乎和WebSocket一样，有几个事件：</p>
+<ul>
+<li>onopen</li>
+<li>onclose</li>
+<li>onmessage</li>
+<li>onerror</li>
+</ul>
+<p>同时它有几个状态，可以通过readyState获取：</p>
+<ul>
+<li>connecting: 浏览器之间正在试图建立channel</li>
+<li>open：建立成功，可以使用send方法发送数据了</li>
+<li>closing：浏览器正在关闭channel</li>
+<li>closed：channel已经被关闭了</li>
+</ul>
+<p>两个暴露的方法:</p>
+<ul>
+<li>close(): 用于关闭channel</li>
+<li>send()：用于通过channel向对方发送数据</li>
+</ul>
+<h4 id="通过Data-Channel发送文件大致思路"><a href="#通过Data-Channel发送文件大致思路" class="headerlink" title="通过Data Channel发送文件大致思路"></a>通过Data Channel发送文件大致思路</h4><p>JavaScript已经提供了File API从<code>input[type=&#39;file&#39;]</code>的元素中提取文件，并通过FileReader来将文件的转换成DataURL，这也意味着我们可以将DataURL分成多个碎片来通过Channel来进行文件传输</p>
+<blockquote>
+<p>本文是在其他博客摘抄而来，简单的了解了下基于webrtc建立视屏聊天室的思路以及实现  </p>
+<p>点击查看<a href="https://github.com/renhaoweixiao/webrtc" target="_blank" rel="external">完整demo</a></p>
+</blockquote>
 
       
     </div>
@@ -497,7 +539,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#三个接口"><span class="nav-number">1.</span> <span class="nav-text">三个接口</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#WebRTC实现了三个API，分别是"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">WebRTC实现了三个API，分别是:</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MediaStream（getUserMedia）"><span class="nav-number">2.</span> <span class="nav-text">MediaStream（getUserMedia）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#浏览器兼容性（此处就用chrome浏览器示例）"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">浏览器兼容性（此处就用chrome浏览器示例）</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#三个接口"><span class="nav-number">1.</span> <span class="nav-text">三个接口</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#WebRTC实现了三个API，分别是"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">WebRTC实现了三个API，分别是:</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#简单介绍下三个API"><span class="nav-number">1.0.1.</span> <span class="nav-text">简单介绍下三个API</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、MediaStream（getUserMedia）"><span class="nav-number"></span> <span class="nav-text">一、MediaStream（getUserMedia）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#浏览器兼容性（此处就用chrome浏览器示例）"><span class="nav-number">0.0.0.1.</span> <span class="nav-text">浏览器兼容性（此处就用chrome浏览器示例）</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、RTCPeerConnection"><span class="nav-number"></span> <span class="nav-text">二、RTCPeerConnection</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#信令"><span class="nav-number">0.0.1.</span> <span class="nav-text">信令</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过服务器建立信道"><span class="nav-number">0.1.</span> <span class="nav-text">通过服务器建立信道</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NAT-防火墙穿越技术"><span class="nav-number">0.2.</span> <span class="nav-text">NAT/防火墙穿越技术</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、RTCDataChannel"><span class="nav-number"></span> <span class="nav-text">三、RTCDataChannel</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#通过Data-Channel发送文件大致思路"><span class="nav-number">0.1.</span> <span class="nav-text">通过Data Channel发送文件大致思路</span></a></li></ol></li></ol></div>
             
 
           </div>
