@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="--js 封装each," />
+  <meta name="keywords" content="--javascript 数组操作," />
 
 
 
@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="封装each方法call()函数用于调用当前函数functionObject，并可同时使用指定对象thisObj作为本次执行时functionObject函数内部的this指针引用。该函数属于Function对象，所有主流浏览器均支持该函数。 语法 functionObject.call(thisObj , arg1 , arg2 ,... args)">
-<meta name="keywords" content="--js 封装each">
+<meta name="description" content="方法一：splice123var arr = [1, 2, 3, 4];arr.splice(0,arr.length);console.log(arr);        //输出[]，数组被清空 定义及用法 splice()方法向数组中添加/删除元素，返回被删除的项目。注释：该方法会改变原是数组  语法arrayObject.splice(index,howmany,item1,item2...">
+<meta name="keywords" content="--javascript 数组操作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="模拟封装jquery 中each方法">
-<meta property="og:url" content="http://yoursite.com/2017/05/03/模拟封装jquery-中each方法/index.html">
+<meta property="og:title" content="js清空数组三种方法">
+<meta property="og:url" content="http://yoursite.com/2017/05/10/js 清空数组三种方法/index.html">
 <meta property="og:site_name" content="Tyson's Blog">
-<meta property="og:description" content="封装each方法call()函数用于调用当前函数functionObject，并可同时使用指定对象thisObj作为本次执行时functionObject函数内部的this指针引用。该函数属于Function对象，所有主流浏览器均支持该函数。 语法 functionObject.call(thisObj , arg1 , arg2 ,... args)">
-<meta property="og:updated_time" content="2017-05-10T02:50:37.427Z">
+<meta property="og:description" content="方法一：splice123var arr = [1, 2, 3, 4];arr.splice(0,arr.length);console.log(arr);        //输出[]，数组被清空 定义及用法 splice()方法向数组中添加/删除元素，返回被删除的项目。注释：该方法会改变原是数组  语法arrayObject.splice(index,howmany,item1,item2...">
+<meta property="og:updated_time" content="2017-05-10T03:44:02.268Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="模拟封装jquery 中each方法">
-<meta name="twitter:description" content="封装each方法call()函数用于调用当前函数functionObject，并可同时使用指定对象thisObj作为本次执行时functionObject函数内部的this指针引用。该函数属于Function对象，所有主流浏览器均支持该函数。 语法 functionObject.call(thisObj , arg1 , arg2 ,... args)">
+<meta name="twitter:title" content="js清空数组三种方法">
+<meta name="twitter:description" content="方法一：splice123var arr = [1, 2, 3, 4];arr.splice(0,arr.length);console.log(arr);        //输出[]，数组被清空 定义及用法 splice()方法向数组中添加/删除元素，返回被删除的项目。注释：该方法会改变原是数组  语法arrayObject.splice(index,howmany,item1,item2...">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/03/模拟封装jquery-中each方法/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/10/js 清空数组三种方法/"/>
 
 
 
 
 
-  <title>模拟封装jquery 中each方法 | Tyson's Blog</title>
+  <title>js清空数组三种方法 | Tyson's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -253,7 +253,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/03/模拟封装jquery-中each方法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/10/js 清空数组三种方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tyson">
@@ -274,7 +274,7 @@
             
             
               
-                模拟封装jquery 中each方法
+                js清空数组三种方法
               
             
           </h1>
@@ -289,8 +289,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-03T16:13:52+08:00">
-                2017-05-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-10T11:00:38+08:00">
+                2017-05-10
               </time>
             
 
@@ -308,9 +308,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/05/03/模拟封装jquery-中each方法/#comments" itemprop="discussionUrl">
+                <a href="/2017/05/10/js 清空数组三种方法/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/03/模拟封装jquery-中each方法/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/05/10/js 清空数组三种方法/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -335,22 +335,39 @@
       
 
       
-        <h3 id="封装each方法"><a href="#封装each方法" class="headerlink" title="封装each方法"></a>封装each方法</h3><p><code>call()</code>函数用于调用当前函数<code>functionObject</code>，并可同时使用指定对象<code>thisObj</code>作为本次执行时<code>functionObject</code>函数内部的<code>this</code>指针引用。<br>该函数属于<code>Function</code>对象，所有主流浏览器均支持该函数。</p>
-<h5 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h5><blockquote>
-<p><code>functionObject.call(thisObj , arg1 , arg2 ,... args)</code></p>
+        <h3 id="方法一：splice"><a href="#方法一：splice" class="headerlink" title="方法一：splice"></a>方法一：splice</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</div><div class="line">arr.splice(<span class="number">0</span>,arr.length);</div><div class="line"><span class="built_in">console</span>.log(arr);        <span class="comment">//输出[]，数组被清空</span></div></pre></td></tr></table></figure>
+<h5 id="定义及用法"><a href="#定义及用法" class="headerlink" title="定义及用法"></a>定义及用法</h5><blockquote>
+<p><code>splice()</code>方法向数组中添加/删除元素，返回被删除的项目。<br>注释：该方法会改变原是数组</p>
 </blockquote>
+<h5 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h5><p><code>arrayObject.splice(index,howmany,item1,item2...itemx)</code></p>
 <a id="more"></a>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> each = <span class="function"><span class="keyword">function</span>(<span class="params">arr,fn</span>)</span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">		<span class="keyword">if</span>(fn.call(arr[i],i,arr[i]) === <span class="literal">false</span>)&#123;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;	</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>];</div><div class="line">each(arr,<span class="function"><span class="keyword">function</span>(<span class="params">index,ele</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>(ele === <span class="number">2</span>)&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'第一个2的索引为'</span>+index);</div><div class="line">		<span class="keyword">return</span> <span class="literal">false</span>;	</div><div class="line">	&#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//打印结果为：第一个2的索引为1</span></div></pre></td></tr></table></figure>
-<h3 id="标签选择器并通过选择器修改样式"><a href="#标签选择器并通过选择器修改样式" class="headerlink" title="标签选择器并通过选择器修改样式"></a>标签选择器并通过选择器修改样式</h3><p>利用<code>getTag</code>获取多个元素的话就会得到多个数组，为了简化开发，可以考虑将其合并到一个数组中，多次调用<code>getTag</code>方法，灵活运用，想获取一个数组就单一获取，想获取多个数组就获取多个</p>
-<p><code>apply()</code>函数用于调用当前函数<code>functionObject</code>，并可同时使用指定对象<code>thisObj</code>作为本次函数执行时函数内部的<code>this</code>指针引用。<br>该函数属于<code>Function</code>对象，所有主流浏览器均支持该函数。</p>
-<h5 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h5><blockquote>
-<p>functionObject.apply( thisObj , argsArray )</p>
-</blockquote>
-<h5 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h5><blockquote>
-<p><code>thisObj</code>:<span style="color:blue;">可选</span>/<code>Object</code>类型指定执行<code>functionObject</code>函数时，函数内部<code>this</code>指针引用的对象。</p>
-<p><code>argsArray</code>:<span style="color:blue;">可选</span>/<code>Array|argumens</code>对象调用<code>functionObject</code>函数时所传入的参数数组或<code>arguments</code>对象。</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height:100px;width:100px;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"height:100px;width:100px;"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">	<span class="keyword">var</span> getTag = <span class="function"><span class="keyword">function</span>(<span class="params">tag,results</span>)</span>&#123;</div><div class="line">		results = results || [];  <span class="comment">//过滤是否有参数，没参数给一个空数组</span></div><div class="line">		results.push.apply(results,<span class="built_in">document</span>.getElementsByTagName(tag));</div><div class="line">		<span class="keyword">return</span> results;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> each = <span class="function"><span class="keyword">function</span>(<span class="params">arr,fn</span>)</span>&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">			<span class="keyword">if</span>(fn.call(arr[i],i,arr[i]) === <span class="literal">false</span>)&#123;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			&#125;	</div><div class="line">		&#125;</div><div class="line">	&#125;;</div><div class="line">	<span class="comment">//通过封装的each方法修改样式</span></div><div class="line">	<span class="keyword">var</span> list = getTag(<span class="string">'div'</span>,getTag(<span class="string">'p'</span>));</div><div class="line">	each(list,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">this</span>.style.backgroudColor = <span class="string">'orange'</span>;	</div><div class="line">	&#125;)	</div><div class="line">	</div><div class="line">	</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index</td>
+<td>必须。整数，规定添加/删除项目的位置，使用负数可以从数组结尾处规定位置。</td>
+</tr>
+<tr>
+<td>howmany</td>
+<td>必须。要删除的项目数量。如果设置为0，则不会删除。</td>
+</tr>
+<tr>
+<td>item1…itemx</td>
+<td>可选。向数组添加的新项目。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h5><p><code>Array</code>类型，返回被删除的元素。</p>
+<h5 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h5><p><code>splice()</code> 方法可删除从 <code>index</code> 处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换那些被删除的元素。</p>
+<p>如果从 <code>arrayObject</code> 中删除了元素，则返回的是含有被删除的元素的数组。</p>
+<h3 id="方法二：length赋值为0"><a href="#方法二：length赋值为0" class="headerlink" title="方法二：length赋值为0"></a>方法二：length赋值为0</h3><p>这种方式很有意思，其它语言如Java，其数组的length是只读的，不能被赋值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</div><div class="line">arr.length = <span class="number">0</span>;</div><div class="line"><span class="built_in">console</span>.log(arr);  <span class="comment">//arr为[]</span></div></pre></td></tr></table></figure></p>
+<h3 id="方法三：赋值为"><a href="#方法三：赋值为" class="headerlink" title="方法三：赋值为[]"></a>方法三：赋值为[]</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ary = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line">ary = []; <span class="comment">// 赋值为一个空数组以达到清空原数组</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -380,7 +397,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js-封装each/" rel="tag"># --js 封装each</a>
+            <a href="/tags/javascript-数组操作/" rel="tag"># --javascript 数组操作</a>
           
         </div>
       
@@ -393,18 +410,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/04/三种常用清除浮动方法/" rel="next" title="三种常用清除浮动方法">
-                <i class="fa fa-chevron-left"></i> 三种常用清除浮动方法
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/28/初识webrtc/" rel="prev" title="初识webrtc">
-                初识webrtc <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/04/cookies-sessionStorage和localStorage区别/" rel="prev" title="cookies,sessionStorage和localStorage区别">
+                cookies,sessionStorage和localStorage区别 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -587,7 +600,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#封装each方法"><span class="nav-number">1.</span> <span class="nav-text">封装each方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#语法"><span class="nav-number">1.0.1.</span> <span class="nav-text">语法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标签选择器并通过选择器修改样式"><span class="nav-number">2.</span> <span class="nav-text">标签选择器并通过选择器修改样式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#语法-1"><span class="nav-number">2.0.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参数"><span class="nav-number">2.0.2.</span> <span class="nav-text">参数</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一：splice"><span class="nav-number">1.</span> <span class="nav-text">方法一：splice</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义及用法"><span class="nav-number">1.0.1.</span> <span class="nav-text">定义及用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#语法"><span class="nav-number">1.0.2.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#返回值"><span class="nav-number">1.0.3.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#说明"><span class="nav-number">1.0.4.</span> <span class="nav-text">说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二：length赋值为0"><span class="nav-number">2.</span> <span class="nav-text">方法二：length赋值为0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法三：赋值为"><span class="nav-number">3.</span> <span class="nav-text">方法三：赋值为[]</span></a></li></ol></div>
             
 
           </div>
@@ -735,9 +748,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/05/03/模拟封装jquery-中each方法/';
-          this.page.identifier = '2017/05/03/模拟封装jquery-中each方法/';
-          this.page.title = '模拟封装jquery 中each方法';
+          this.page.url = 'http://yoursite.com/2017/05/10/js 清空数组三种方法/';
+          this.page.identifier = '2017/05/10/js 清空数组三种方法/';
+          this.page.title = 'js清空数组三种方法';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://true.disqus.com/embed.js';
