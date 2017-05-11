@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="wx小程序," />
 
 
 
@@ -90,15 +90,16 @@
 
 
 
-<meta name="description" content="奋斗是为了更好的生活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tyson's Blog">
-<meta property="og:url" content="http://yoursite.com/tags/webrtc/index.html">
+<meta name="keywords" content="wx小程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序 出现警告信息"Now you can provide attr "wx:key" for a "wx:for" to improve performance"">
+<meta property="og:url" content="http://yoursite.com/2017/05/11/微信wx：for警告/index.html">
 <meta property="og:site_name" content="Tyson's Blog">
-<meta property="og:description" content="奋斗是为了更好的生活">
+<meta property="og:image" content="http://yoursite.com/2017/05/11/微信wx：for警告/images/psb.png">
+<meta property="og:updated_time" content="2017-05-11T07:15:44.686Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tyson's Blog">
-<meta name="twitter:description" content="奋斗是为了更好的生活">
+<meta name="twitter:title" content="微信小程序 出现警告信息"Now you can provide attr "wx:key" for a "wx:for" to improve performance"">
+<meta name="twitter:image" content="http://yoursite.com/2017/05/11/微信wx：for警告/images/psb.png">
 
 
 
@@ -126,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/webrtc/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/11/微信wx：for警告/"/>
 
 
 
 
 
-  <title>标签: webrtc | Tyson's Blog</title>
+  <title>微信小程序 出现警告信息"Now you can provide attr "wx:key" for a "wx:for" to improve performance" | Tyson's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -157,7 +158,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -241,46 +242,171 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        webrtc
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/11/微信wx：for警告/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tyson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tyson's Blog">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                微信小程序 出现警告信息"Now you can provide attr "wx:key" for a "wx:for" to improve performance"
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-11T16:01:12+08:00">
+                2017-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/11/微信wx：for警告/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/05/11/微信wx：for警告/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p><img src="images/psb.png" alt="wx 图片"></p>
+<a id="more"></a>
+<h5 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a><span style="color:red;">解决方法：</span></h5><p>首先，这只是一个警告信息，不是错误信息，不理他不会对程序运行有任何的影响。</p>
+<p>官方文档原话：如不提供 <code>wx: key</code>，会报一个 <span style="color:red;">warning</span>， 如果明确知道该列表是静态，或者不必关注其顺序，可以选择忽略。</p>
+<p>如果你一定想去掉这个警告，可以在<code>wx: for</code>的组件属性里增加一个 <code>wx:key = &quot;unique&quot;</code>，<code>unique</code>请替换成数据绑定列表里的任意一个字段的字段名，比如文章列表数据中的字段 <code>&quot;postId&quot;</code>，即<code>wx:key = &quot;postId&quot;</code>。</p>
+<p>不建议使用<code>wx:key = &quot;*this&quot;</code>。其实<code>wx: key</code>用来对列表渲染的数据指定一个<code>&quot;主键&quot;</code>，以加快列表渲染的速度。</p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/04/28/初识webrtc/" itemprop="url">
-              
-                <span itemprop="name">初识webrtc</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-28T17:28:38+08:00"
-              content="2017-04-28" >
-          04-28
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/wx小程序/" rel="tag"># wx小程序</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/10/js 清空数组三种方法/" rel="prev" title="js清空数组三种方法">
+                js清空数组三种方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -288,6 +414,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -307,8 +444,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/avatar.jpg"
@@ -416,6 +562,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方法："><span class="nav-number">1.</span> <span class="nav-text">解决方法：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -534,6 +696,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
 
   
 
@@ -551,6 +717,18 @@
       <script id="dsq-count-scr" src="https://true.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/05/11/微信wx：for警告/';
+          this.page.identifier = '2017/05/11/微信wx：for警告/';
+          this.page.title = '微信小程序 出现警告信息\"Now you can provide attr \"wx:key\" for a \"wx:for\" to improve performance\"';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://true.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
