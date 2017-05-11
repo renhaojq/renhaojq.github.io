@@ -339,14 +339,14 @@
 
       
         
-          <p><img src="images/psb.png" alt="wx 图片"></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/11/微信wx：for警告/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <p><img src="images/psb.png" alt="wx 图片"></p>
+<h5 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a><span style="color:red;">解决方法：</span></h5><p>首先，这只是一个警告信息，不是错误信息，不理他不会对程序运行有任何的影响。</p>
+<p>官方文档原话：如不提供 <code>wx: key</code>，会报一个 <span style="color:red;">warning</span>， 如果明确知道该列表是静态，或者不必关注其顺序，可以选择忽略。</p>
+<p>如果你一定想去掉这个警告，可以在<code>wx: for</code>的组件属性里增加一个 <code>wx:key = &quot;unique&quot;</code>，<code>unique</code>请替换成数据绑定列表里的任意一个字段的字段名，比如文章列表数据中的字段 <code>&quot;postId&quot;</code>，即<code>wx:key = &quot;postId&quot;</code>。</p>
+<p>不建议使用<code>wx:key = &quot;*this&quot;</code>。其实<code>wx: key</code>用来对列表渲染的数据指定一个<code>&quot;主键&quot;</code>，以加快列表渲染的速度。</p>
+
+          
         
       
     </div>
@@ -1391,7 +1391,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
